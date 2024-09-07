@@ -37,7 +37,7 @@ pybase16384
 cachetools
 langdetect
 # NOTE: 截至2024/08/13，WeTextProcessing 安裝方法，需要在conda环境下，执行命令 conda install -c conda-forge pynini==2.1.6
-# NOTE: 然后再执行命令 pip install WeTextProcessing==1.0.4
+# NOTE: 然后再执行命令 pip install WeTextProcessing==1.0.4.1
 # WeTextProcessing
 
 #### fish-speech

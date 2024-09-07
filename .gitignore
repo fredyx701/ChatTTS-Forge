@@ -190,6 +190,11 @@ cython_debug/
 /ffmpeg/ffprobe.exe
 /ffmpeg/ffplay.exe
 
+/ffmpeg/rubberband-r3.exe
+/ffmpeg/rubberband.exe
+/ffmpeg/sndfile.dll
+
+
 .vscode
 
 tests/test_outputs

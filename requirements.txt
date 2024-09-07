@@ -36,7 +36,7 @@ pyrubberband
 pybase16384
 cachetools
 langdetect
-WeTextProcessing
+# WeTextProcessing
 
 #### fish-speech
 hydra-core

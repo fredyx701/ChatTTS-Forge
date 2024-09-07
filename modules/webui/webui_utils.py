@@ -30,6 +30,7 @@ from modules.utils import audio_utils
 from modules.utils.hf import spaces
 from modules.webui import webui_config
 from modules.webui.speaker.wav_misc import encode_to_wav
+import time
 
 logger = logging.getLogger(__name__)
 
@@ -297,6 +298,9 @@ def tts_generate(
         bitrate="64k",
     )
 
+    print(f"Start Generate Audio\n TTSConfig: {tts_config}\n InferConfig: {infer_config}\n AdjustConfig: {adjust_config}\n EnhancerConfig: {enhancer_config}\n EncoderConfig: {encoder_config}\n Text:{text}\n")
+    start_time = time.perf_counter()
+
     handler = TTSHandler(
         text_content=text,
         spk=spk,
@@ -309,6 +313,9 @@ def tts_generate(
     )
 
     sample_rate, audio_data = handler.enqueue()
+
+    end_time = time.perf_counter()
+    print(f"TTS Elapsed Time: {round(end_time - start_time, 2)}s")
 
     # NOTE: 这里必须要加，不然 gradio 没法解析成 mp3 格式
     audio_data = audio_utils.audio_to_int16(audio_data)
